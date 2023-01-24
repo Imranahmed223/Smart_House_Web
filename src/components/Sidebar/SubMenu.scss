@@ -1,0 +1,9 @@
+.menu-item {
+  display: flex;
+  & > img {
+    height: 1.9rem;
+    width: 1.7rem;
+  }
+}
+
+// 

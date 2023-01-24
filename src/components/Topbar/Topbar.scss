@@ -1,0 +1,218 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+
+.topbar {
+  box-shadow: 2px 2px 10px gray;
+  width: 100%;
+  &-container {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-logo {
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    &-hamburger {
+      display: none;
+      @include respond(phone) {
+        display: block;
+        cursor: pointer;
+        font-size: 3.5rem;
+        line-height: 1rem;
+      }
+    }
+
+    &-profile {
+      display: flex;
+      align-items: center;
+
+      &-pic {
+        & > img {
+          height: 2.5rem;
+          box-shadow: 2px 2px 10px gray;
+          margin-right: 2rem;
+          border-radius: 50%;
+          height: 3rem;
+          width: 3rem;
+          background-color: white;
+
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+        }
+      }
+      &-arrow {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Drop Down Project
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-trigger img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  margin-top: 3rem;
+  right: 1rem;
+  background-color: #fff;
+
+  padding: 10px 20px;
+  width: 120px;
+  background-color: $blue;
+  border-radius: 1rem;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background: var(--secondary-bg);
+  transform: rotate(45deg);
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+.user-name {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 0.7rem;
+}
+
+h3 span {
+  font-size: 1rem;
+  color: white;
+  font-weight: 200;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu ul li:hover a {
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover img {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.dropdownItem {
+  display: flex;
+  margin: 10px auto;
+}
+
+.dropdownItem img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: var(--speed);
+}
+
+.dropdownItem a {
+  max-width: 100px;
+  margin-left: 10px;
+  color: white;
+  transition: var(--speed);
+}
+
+//
+.popup-logout {
+  background-color: $blue;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  // color: $blue;
+  border-radius: 0.5rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+//  Top bar
+
+.side_menu {
+  &-inactive {
+    width: 80px;
+
+    .side_menu-top-toggle {
+      right: -55px;
+    }
+    .side_menu-top-menu-item-text {
+      //   color: red;
+      display: none;
+    }
+  }
+}
+
+.res-inactive {
+  display: none;
+}
+
+// Responsive scss
+
+.responsive {
+  z-index: 100000;
+  position: relative;
+  position: fixed;
+  height: 100vh;
+  background-color: $blue;
+  width: 45%;
+  padding: 2rem;
+  margin-left: -1rem;
+  margin-top: -7rem;
+  &-menu {
+    margin-top: 3rem;
+    width: 85%;
+  }
+
+  &-toggle {
+    float: right;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+    font-weight: 100;
+  }
+}

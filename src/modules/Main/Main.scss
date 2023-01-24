@@ -1,0 +1,24 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+
+.mainpage {
+  // &-topbar {
+
+  // }
+
+  &-container {
+    display: flex;
+    &-sidebar {
+      width: 16%;
+      background-color: $blue;
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    &-popup {
+      width: 84%;
+      background-image: url("../../assets/userback.png");
+      height: 90.7vh;
+    }
+  }
+}

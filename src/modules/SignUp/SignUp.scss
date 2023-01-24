@@ -1,0 +1,108 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+.signup {
+  &-container {
+    display: flex;
+    &-left {
+      width: 43%;
+      background-image: linear-gradient(
+          to right bottom,
+          rgba(60, 80, 151, 0.858),
+          rgba(60, 80, 151, 0.858)
+        ),
+        url(../../assets/login/signup.png);
+      background-position: center;
+
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include respond(phone) {
+        display: none;
+      }
+      &-content {
+        width: 40rem;
+        & > h1 {
+          color: $white;
+          text-align: center;
+          font-size: 3.2rem;
+          font-weight: 700;
+        }
+      }
+    }
+    &-right {
+      width: 57%;
+      height: 100vh;
+
+      @include respond(phone) {
+        width: 100%;
+      }
+      padding: 4rem 4rem;
+      &-form {
+        &-signup {
+          width: 75%;
+          margin: auto;
+
+          @include respond(phone) {
+            width: 90%;
+          }
+          &-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include respond(phone) {
+              flex-direction: column;
+            }
+            &-left {
+              width: 45%;
+
+              @include respond(phone) {
+                width: 100%;
+              }
+            }
+            &-right {
+              width: 45%;
+
+              @include respond(phone) {
+                width: 100%;
+              }
+            }
+          }
+          &-checkbox {
+            display: flex;
+            margin: 1.5rem 0rem;
+            & > input {
+              accent-color: $blue;
+              margin-right: 1rem;
+              border: none;
+              outline: none;
+              background: none;
+            }
+          }
+          &-btn {
+            @include respond(phone) {
+              padding-bottom: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//  Sign Up Page left
+
+.signleft {
+  &-content {
+    width: 77%;
+    & > h1 {
+      // color: white;
+      color: red;
+      text-align: center;
+      font-size: 3.2rem;
+      font-weight: 800;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+
+.nav {
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-logo {
+      & > img {
+        @include respond(phone) {
+          height: 4rem;
+        }
+      }
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-first {
+        margin-right: 2.2rem;
+        & > * {
+          background: none;
+          border: none;
+          color: $blue;
+          font-size: 1.2rem;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+      &-second {
+        margin-right: 2.2rem;
+        & > * {
+          background: none;
+          border: none;
+          color: #838db5ab;
+          font-size: 1.2rem;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+      &-demo {
+        width: 20%;
+      }
+    }
+  }
+  &-heading {
+    padding-top: 0.1rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+    }
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    &-container {
+      display: flex;
+    }
+  }
+
+  &-or {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    padding: 1.5rem 0rem;
+    &-divider {
+      border-bottom: 1px solid black;
+      width: 90%;
+    }
+    &-or {
+      padding: 0rem 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+}
+
+//  New Code for Hover Effect
+// .wrapper .button {
+//   display: inline-block;
+//   height: 3rem;
+//   width: 3rem;
+//   float: left;
+//   margin: 0 0.7rem;
+//   overflow: hidden;
+//   cursor: pointer;
+//   transition: all 0.3s ease-out;
+//   background-color: $light-gray;
+//   border-radius: 0.5rem;
+// }
+
+.wrapper .button {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  float: left;
+  margin: 0 0.7rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background-color: $light-gray;
+  border-radius: 0.5rem;
+  @include respond(phone) {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+.wrapper .button:hover {
+  width: 18rem;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+}
+.wrapper .button .icon {
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  margin-top: 0.6rem;
+  margin-left: 0.7rem;
+  //  display: inline-block;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // padding-top: 0.2rem;
+  // text-align: center;
+  // transition: all 0.3s ease-out;
+  // height: 35px;
+}
+
+.wrapper .button:nth-child(1):hover .icon {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  margin-top: 0rem;
+}
+.wrapper .button:nth-child(2):hover .icon {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  margin-top: 0rem;
+}
+
+.wrapper .button .icon i {
+  font-size: 25px;
+  line-height: 35px;
+  transition: all 0.3s ease-out;
+}
+
+.wrapper .button span {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 12px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+  & > p {
+    font-weight: 200;
+  }
+}
+.wrapper .button:nth-child(1) span {
+  color: white;
+}
+.wrapper .button:nth-child(2) span {
+  color: white;
+}

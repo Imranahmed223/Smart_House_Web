@@ -1,0 +1,227 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+
+.dashboard {
+  &-container {
+    display: flex;
+    &-sidebar {
+      width: 16%;
+
+      background-color: $blue;
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    &-content {
+      padding-top: 3rem;
+      padding-left: 10rem;
+      width: 70%;
+
+      @include respond(tab-land) {
+        padding-left: 2rem;
+        width: 80%;
+      }
+      @include respond(tab-port) {
+        padding-left: 2rem;
+        width: 80%;
+      }
+      @include respond(phone) {
+        width: 100%;
+        padding-left: 1rem;
+      }
+
+      &-container {
+        &-heading {
+          padding-bottom: 3rem;
+          & > h1 {
+            font-weight: 600;
+            font-size: 1.9rem;
+            & > span {
+              color: $blue;
+            }
+          }
+        }
+        &-flex {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @include respond(phone) {
+            flex-direction: column;
+          }
+          &-search {
+            display: flex;
+            width: 45%;
+
+            align-items: center;
+            @include respond(phone) {
+              width: 90%;
+            }
+            & > input {
+              width: 100%;
+              background-color: $light-gray;
+              border: none;
+              border-radius: 0.7rem;
+              padding: 0.7rem 4rem;
+              margin-left: -3.3rem;
+              &:focus {
+                outline-color: $light-gray;
+                background-color: white;
+              }
+
+              &::placeholder {
+                color: $white;
+              }
+            }
+            & > img {
+              padding-left: 1.2rem;
+              z-index: 1000;
+            }
+          }
+          // For Date
+          &-date {
+            width: 40%;
+            background-color: $blue;
+            padding: 1.4rem 2rem;
+            border-radius: 0.6rem;
+            @include respond(phone) {
+              width: 83%;
+              margin-top: 2rem;
+            }
+            &-container {
+              margin-left: 1rem;
+              width: 87%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              & > h4 {
+                color: white;
+                font-size: 1.2rem;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        // For Cards
+        &-cards {
+          margin-top: 3rem;
+          align-items: center;
+          display: grid;
+          grid-template-columns: auto auto auto auto auto auto auto;
+
+          @include respond(tab-port) {
+            grid-template-columns: auto auto auto auto auto;
+          }
+          @include respond(phone) {
+            margin: auto;
+            width: 80%;
+            grid-template-columns: auto auto auto;
+            gap: 1rem;
+          }
+
+          & > * {
+            &:not(:last-child) {
+              margin-right: 1.5rem;
+            }
+            @include respond(phone) {
+              margin-top: 2rem;
+            }
+            @include respond(tab-port) {
+              margin-top: 2rem;
+            }
+          }
+        }
+        // Bottom
+        &-bottom {
+          margin-top: 4rem;
+          display: flex;
+          margin-bottom: 4rem;
+          justify-content: space-between;
+          @include respond(phone) {
+            flex-direction: column;
+          }
+          @include respond(tab-port) {
+            flex-direction: column;
+          }
+
+          &-left {
+            width: 50%;
+            @include respond(phone) {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+            }
+            @include respond(tab-port) {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+            }
+
+            & > h2 {
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
+            & > img {
+              margin-top: 3rem;
+            }
+          }
+          &-right {
+            width: 50%;
+            @include respond(phone) {
+              width: 100%;
+            }
+            @include respond(tab-port) {
+              margin-top: 2rem;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+            }
+
+            & > h2 {
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @include respond(phone) {
+  //   align-content: center;
+  //   width: 100%;
+  //   background-color: red;
+  // }
+  // Progress Bar containe{
+  &-progress-bar {
+    &-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+
+      @include respond(tab-port) {
+        grid-template-columns: auto auto;
+        & > * {
+          margin-left: 3rem;
+        }
+      }
+
+      @include respond(phone) {
+        width: 100%;
+        grid-template-columns: auto auto;
+        & > * {
+          margin-left: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.chappi {
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+  & > img {
+    width: 100%;
+  }
+}

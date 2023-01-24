@@ -1,0 +1,225 @@
+@import "../../scss/variable";
+@import "../../scss/mixins";
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  @supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    background-color: rgba($color-black, 0.3);
+  }
+
+  &__content {
+    @include absCenter;
+
+    width: 45%;
+    height: 20vh;
+    margin-left: 8rem;
+    background-color: $blue;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 0.7rem;
+    display: table;
+    overflow: visible;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s 0.2s;
+    @include respond(phone) {
+      width: 80%;
+      margin-left: 0.1rem;
+    }
+  }
+  &__container {
+    padding: 0.9rem 2rem;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      // Profile
+      &-profile {
+        z-index: 1000000000000;
+        margin-top: -2rem;
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-radius: 50%;
+        & > img {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+        }
+      }
+      // For BTn edit
+      &-edit {
+        margin-top: 0.5rem;
+        &-btn {
+          display: flex;
+          align-items: center;
+          padding: 0.2rem 0.8rem;
+          color: $blue;
+          font-size: 1rem;
+          background-color: white;
+          & > img {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+    &-bottom {
+      // Bottom Padding
+      width: 90%;
+      margin: auto;
+
+      &-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-first {
+          width: 40%;
+        }
+        &-second {
+          width: 40%;
+          margin-right: 1rem;
+        }
+      }
+
+      &-container {
+        // formStyle for pop
+
+        &-item {
+          padding-top: 1.5rem;
+          & > p {
+            color: white;
+            font-weight: 200;
+          }
+          & > h3 {
+            padding-top: 0.1rem;
+            color: white;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  //Open states
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  // Close BTN
+  &__close {
+    &:link,
+    &:visited {
+      color: white;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      font-weight: 200;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+  }
+}
+
+.popup-click {
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > * {
+    padding: 2rem 6rem;
+    border: none;
+    background-color: $blue;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}
+
+.gandaName {
+  width: 10rem;
+  height: 10rem;
+  & > img {
+    border-radius: 50%;
+  }
+  @include respond(phone) {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.tst {
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.32);
+  @include respond(phone) {
+    width: 10;
+    height: 10;
+  }
+}
+.gandaName > .tst2 {
+  @include respond(phone) {
+    display: none;
+  }
+}
+.mainAvatar > .tst {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.try > .try1 > .mainAvatar {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.popup__container-top-edit-btn1 {
+  color: $blue;
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.5rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  transition: 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: $blue;
+    border: 1px solid white;
+    color: white;
+  }
+}
+
+.update-btn {
+  color: $blue;
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.5rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  transition: 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: $blue;
+    border: 1px solid white;
+    color: white;
+  }
+}

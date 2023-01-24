@@ -1,0 +1,85 @@
+@import "../../scss/variable";
+.progress {
+  margin-top: 2rem;
+  width: 155px;
+  &-container {
+    border-radius: 1rem;
+    border: 1px solid $light-gray;
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background-color: $blue;
+      color: white;
+      margin-top: -0.5px;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      & > h5 {
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+    }
+    &-bar {
+      margin-top: 0.6rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  }
+}
+
+.progressbar {
+  &_outer {
+    margin-top: 5px;
+    margin-left: 3px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 2s ease-in-out;
+  }
+  &_inner {
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    & > h4 {
+      color: #3c5097;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+  }
+}
+
+// circle {
+//   fill: none;
+//   // stroke: cornflowerblue;
+//   stroke: url(#GradientColor);
+//   stroke-width: 10px;
+//   stroke-dasharray: 432;
+//   stroke-dashoffset: 472;
+// }
+
+// svg {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   margin-left: 0.8rem;
+// }
+
+// defs {
+//   width: 100px;
+//   height: 100px;
+// }
